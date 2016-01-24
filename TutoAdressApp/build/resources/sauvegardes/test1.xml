@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persons>
+    <person>
+        <birthday>1999-02-21</birthday>
+        <city>Toulouse</city>
+        <firstName>Fabien</firstName>
+        <lastName>GAUTREAULT</lastName>
+        <postalCode>31300</postalCode>
+        <street>3 rue Ella Maillart</street>
+    </person>
+    <person>
+        <birthday>1999-02-21</birthday>
+        <city>some city</city>
+        <firstName>A</firstName>
+        <lastName>A</lastName>
+        <postalCode>1234</postalCode>
+        <street>some street</street>
+    </person>
+</persons>
