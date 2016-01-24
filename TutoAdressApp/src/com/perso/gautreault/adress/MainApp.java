@@ -10,6 +10,7 @@ import javax.xml.bind.Unmarshaller;
 
 import com.perso.gautreault.adress.model.Person;
 import com.perso.gautreault.adress.model.PersonListWrapper;
+import com.perso.gautreault.adress.view.BirthdayStatisticsController;
 import com.perso.gautreault.adress.view.PersonOverviewController;
 import com.perso.gautreault.adress.view.RootLayoutController;
 import com.perso.gautreault.adress.view.dialog.PersonEditDialogController;
@@ -263,6 +264,35 @@ public class MainApp extends Application {
 			// Update the stage title.
 			primaryStage.setTitle("AddressApp");
 		}
+	}
+
+	/**
+	 * Opens a dialog to show birthday statistics.
+	 */
+	public void showBirthdayStatistics() {
+	    try {
+	        // Load the fxml file and create a new stage for the popup.
+	        FXMLLoader loader = new FXMLLoader();
+	        loader.setLocation(MainApp.class.getResource("view/BirthdayStatistics.fxml"));
+
+	        AnchorPane page = (AnchorPane) loader.load();
+	        Stage dialogStage = new Stage();
+	        dialogStage.setTitle("Birthday Statistics");
+	        dialogStage.initModality(Modality.WINDOW_MODAL);
+	        dialogStage.initOwner(primaryStage);
+
+	        Scene scene = new Scene(page);
+	        dialogStage.setScene(scene);
+
+	        // Set the persons into the controller.
+	        BirthdayStatisticsController controller = loader.getController();
+	        controller.setPersonData(personData);
+
+	        dialogStage.show();
+
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
 	}
 
 	/**
